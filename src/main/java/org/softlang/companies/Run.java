@@ -1,4 +1,4 @@
-package com.mapr.examples;
+package org.softlang.companies;
 
 import org.softlang.companies.Consumer101;
 import org.softlang.companies.Producer101;
