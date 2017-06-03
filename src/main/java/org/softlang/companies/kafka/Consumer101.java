@@ -1,4 +1,4 @@
-package org.softlang.companies;
+package org.softlang.companies.kafka;
 
 import com.google.common.io.Resources;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
@@ -8,7 +8,6 @@ import org.apache.kafka.clients.consumer.KafkaConsumer;
 import javax.json.Json;
 import javax.json.JsonObject;
 import javax.json.JsonReader;
-import javax.json.JsonValue;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.StringReader;

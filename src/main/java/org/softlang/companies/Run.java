@@ -1,7 +1,8 @@
 package org.softlang.companies;
 
-import org.softlang.companies.Consumer101;
-import org.softlang.companies.Producer101;
+import org.softlang.companies.kafka.Consumer101;
+import org.softlang.companies.kafka.Producer101;
+import org.softlang.companies.kafka.Stream101;
 
 import java.io.IOException;
 
@@ -21,6 +22,10 @@ public class Run {
             case "total":
                 Consumer101.main(args);
                 break;
+            case "cut":
+                Stream101.main(args);
+                break;
+            
             default:
                 throw new IllegalArgumentException("Don't know how to do " + args[0]);
         }

@@ -1,4 +1,4 @@
-package org.softlang.companies;
+package org.softlang.companies.kafka;
 
 import org.apache.kafka.streams.KafkaStreams;
 import org.apache.kafka.streams.StreamsConfig;
@@ -12,7 +12,6 @@ import javax.json.Json;
 import javax.json.JsonObject;
 import javax.json.JsonObjectBuilder;
 import javax.json.JsonReader;
-import javax.json.JsonString;
 import javax.json.JsonValue;
 import java.io.StringReader;
 import java.util.HashMap;

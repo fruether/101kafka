@@ -1,4 +1,4 @@
-package org.softlang.companies;
+package org.softlang.companies.kafka;
 
 import com.google.common.io.Resources;
 import org.apache.kafka.clients.producer.KafkaProducer;
