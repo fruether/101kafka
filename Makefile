@@ -7,13 +7,17 @@ install:
 			# Build the project
 			mvn package
 
-.PHONY: createTopic
-createTopic:
+.PHONY: run
+run:		start
 			kafka_2.12-0.10.2.1/bin/kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic 101companies-cut
 			kafka_2.12-0.10.2.1/bin/kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic 101companies
 
+.PHONY: start
+start: 		
+			kafka_2.12-0.10.2.1/bin/zookeeper-server-start.sh kafka_2.12-0.10.2.1/config/zookeeper.properties
+			kafka_2.12-0.10.2.1/bin/kafka-server-start.sh kafka_2.12-0.10.2.1/config/server.properties
 
-run: createTopic
+
 
 
 
