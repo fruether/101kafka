@@ -44,7 +44,6 @@ public class Consumer101 {
 					System.out.println(record.value());
 					JsonReader jsonReader = Json.createReader(new StringReader(record.value()));
 					JsonObject object = jsonReader.readObject();
-					System.out.println(object.toString());
 					String salaryString = object.get("salary").toString();
 					double salary = Double.parseDouble(salaryString);
 					total+=salary;
