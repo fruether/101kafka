@@ -50,16 +50,16 @@ $ mvn package
 ### Step 5: Execute the total and produce
 This will create a Kafka consumer that is adding up all the salary of the received employees and prints out the result. Hence implementing the total feature.
  ```
-		$ java -jar target/kafka-examples-1.0-SNAPSHOT-jar-with-dependencies.jar total	
-		$ java -jar target/kafka-examples-1.0-SNAPSHOT-jar-with-dependencies.jar company
+$ java -jar target/kafka-examples-1.0-SNAPSHOT-jar-with-dependencies.jar total	
+$ java -jar target/kafka-examples-1.0-SNAPSHOT-jar-with-dependencies.jar company
   ```
   
 ### Step 6: Execute the cut and produce
 This will create a Kafka stream that is reading all the employee data. Is cutting the salary by 2 and then sending publishes it to another stream.
  ```
-   $ kafka_2.12-0.10.2.1bin/kafka-console-consumer --zookeeper zk01.example.com:2181 --topic 101companies-cut
+$ kafka_2.12-0.10.2.1bin/kafka-console-consumer --zookeeper zk01.example.com:2181 --topic 101companies-cut
 
-		$ java -jar target/kafka-examples-1.0-SNAPSHOT-jar-with-dependencies.jar total	
-		$ java -jar target/kafka-examples-1.0-SNAPSHOT-jar-with-dependencies.jar cut
+$ java -jar target/kafka-examples-1.0-SNAPSHOT-jar-with-dependencies.jar total	
+$ java -jar target/kafka-examples-1.0-SNAPSHOT-jar-with-dependencies.jar cut
   ```
 
