@@ -8,16 +8,33 @@ install:
 			mvn package
 
 .PHONY: run
-run:		start
+run:		
+			# Create the necessary topics
 			kafka_2.12-0.10.2.1/bin/kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic 101companies-cut
 			kafka_2.12-0.10.2.1/bin/kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic 101companies
 
 .PHONY: start
-start: 		
-			kafka_2.12-0.10.2.1/bin/zookeeper-server-start.sh kafka_2.12-0.10.2.1/config/zookeeper.properties
-			kafka_2.12-0.10.2.1/bin/kafka-server-start.sh kafka_2.12-0.10.2.1/config/server.properties
+start: 	
+			# Start kafka and zookeeper
+			kafka_2.12-0.10.2.1/bin/zookeeper-server-start.sh kafka_2.12-0.10.2.1/config/zookeeper.properties &
+			kafka_2.12-0.10.2.1/bin/kafka-server-start.sh kafka_2.12-0.10.2.1/config/server.properties &
+
+.PHONY: total
+total:	
+		# Start kafka and zookeeper
+		java -jar kafka_2.12-0.10.2.1/target/kafka-examples-1.0-SNAPSHOT-jar-with-dependencies.jar total
+		sleep 5
+		java -jar kafka_2.12-0.10.2.1/target/kafka-examples-1.0-SNAPSHOT-jar-with-dependencies.jar company
+
+.PHONY: cut
+cut:	
+		# Start kafka and zookeeper
+		java -jar kafka_2.12-0.10.2.1/target/kafka-examples-1.0-SNAPSHOT-jar-with-dependencies.jar cut
+		sleep 5
+		java -jar kafka_2.12-0.10.2.1/target/kafka-examples-1.0-SNAPSHOT-jar-with-dependencies.jar company
 
 
-
+.PHONY: all
+all: install run start
 
 
