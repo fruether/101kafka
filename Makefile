@@ -22,17 +22,17 @@ start:
 .PHONY: total
 total:	
 		# Create the company producer and total calculation
-		java -jar kafka_2.12-0.10.2.1/target/kafka-examples-1.0-SNAPSHOT-jar-with-dependencies.jar total
+		java -jar target/kafka-examples-1.0-SNAPSHOT-jar-with-dependencies.jar total
 		# Make sure total is up and running
 		sleep 5
-		java -jar kafka_2.12-0.10.2.1/target/kafka-examples-1.0-SNAPSHOT-jar-with-dependencies.jar company
+		java -jar target/kafka-examples-1.0-SNAPSHOT-jar-with-dependencies.jar company
 
 .PHONY: cut
 cut:	
 		# Start kafka and zookeeper
-		java -jar kafka_2.12-0.10.2.1/target/kafka-examples-1.0-SNAPSHOT-jar-with-dependencies.jar cut
+		java -jar target/kafka-examples-1.0-SNAPSHOT-jar-with-dependencies.jar cut
 		sleep 5
-		java -jar kafka_2.12-0.10.2.1/target/kafka-examples-1.0-SNAPSHOT-jar-with-dependencies.jar company
+		java -jar target/kafka-examples-1.0-SNAPSHOT-jar-with-dependencies.jar company
 
 
 .PHONY: all
