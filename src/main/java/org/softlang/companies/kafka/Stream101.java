@@ -44,7 +44,6 @@ public class Stream101 implements ValueMapper<Object, String>{
 	}
 	
 	public String apply(Object input) {
-		System.out.print("Inside apply");
 		String employee = input.toString();
 		JsonReader jsonReader = Json.createReader(new StringReader(employee));
 		JsonObject object = jsonReader.readObject();
